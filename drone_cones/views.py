@@ -359,7 +359,7 @@ class ManagerView:
             activeDroneCount += 1
 
         for order in orders:
-            totalRevenue += order.orderCost
+            totalRevenue += order.orderCost * .95
 
         context = {'userCount': userCount, 'managerCount': managerCount, 'activeDroneCount': activeDroneCount, 'totalRevenue': totalRevenue}
 
