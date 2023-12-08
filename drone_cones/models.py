@@ -33,7 +33,7 @@ class Drone(models.Model):
     scoops = models.IntegerField()
     isActive = models.BooleanField(default = False)
     isDelivering = models.BooleanField(default = False)
-    revenue = models.IntegerField(default = 0)
+    revenue = models.FloatField(default = 0)
     orders_delivered = models.IntegerField(default = 0)
     dateRegistered = models.DateTimeField(auto_now_add=True)
 
@@ -65,4 +65,6 @@ class Products(models.Model):
     image = models.ImageField(null=True, blank=True)
     flavor = models.CharField(max_length=100)
     stockAvailable = models.IntegerField()
-    cost = models.IntegerField(blank=True, null=True)
+    cost = models.FloatField(default=0.0)
+    companyCost = models.FloatField(default=0.0)
+    netRevenue = models.FloatField(default=0.0)

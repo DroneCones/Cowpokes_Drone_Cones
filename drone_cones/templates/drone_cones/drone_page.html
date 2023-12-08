@@ -21,7 +21,11 @@
             		<a href="{% url 'drone_cones:manager' %}"> <u>M</u>anager</a>
             		{% endif %}
             		<a href="/dronecones/logout">Logout</a>
-            		<img class="baricon" src="{% static 'drone_cones/images/computer.png' %}" onclick="location.href='account'" style="cursor: pointer" alt="computer">
+
+			<a href="{% url 'drone_cones:account' %}">
+                                <img class="baricon" src="{% static 'drone_cones/images/computer.png' %}" style="cursor: pointer" alt="computer">
+                        </a>
+
             		<img class="peopleicon" src="{% static 'drone_cones/images/drone_cones_logo.png' %}"  alt="address book">
           	</div>
 
@@ -41,7 +45,7 @@
 
 					<div> Size: {{drone.size}} </div>
 
-					<div> Revenue: <h3 style="display: inline"> ${{drone.revenue}} </h3> </div>
+					<div> Revenue: <h3 style="display: inline"> ${{ drone.revenue|floatformat:2 }} </h3> </div>
 
 					{% if drone.isActive %}
 					<div> Status: Active </div>
